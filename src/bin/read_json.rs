@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+mod tests;
 
 fn main() {
     let dummy_json = r#"
