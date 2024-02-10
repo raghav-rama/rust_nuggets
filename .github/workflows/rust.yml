@@ -16,8 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up linker
-        run: sudo apt update && sudo apt install -y libssl-dev llvm lld && \
-          sudo update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld 20
+        run: apt update && apt install -y libssl-dev llvm lld && \
+          update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld 20
       - name: Build
         run: cargo build --verbose
       - name: Run tests
