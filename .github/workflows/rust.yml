@@ -16,8 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up linker
-        run: apt update && apt install -y libssl-dev llvm lld
-      - name: Build
-        run: cargo build --verbose
-      - name: Run tests
-        run: cargo test --verbose
+        run: docker build -t 860x9/rust_nuggets:latest .
+      - name: Run tests in docker container
+        run: docker run --rm myapp cargo test --release -verbose

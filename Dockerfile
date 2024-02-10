@@ -18,5 +18,8 @@ COPY src ./src
 # Build the application
 RUN cargo build --release
 
+# Run the tests
+RUN cargo test --release
+
 # Set the start command to run your binary
 CMD ["/usr/src/rust_nuggets/target/release/rust_nuggets"]
