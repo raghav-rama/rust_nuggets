@@ -18,4 +18,4 @@ jobs:
       - name: Set up linker
         run: docker build -t 860x9/rust_nuggets:latest .
       - name: Run tests in docker container
-        run: docker run --rm myapp cargo test --release -verbose
+        run: docker run --rm rust_nuggets cargo test --release --verbose
