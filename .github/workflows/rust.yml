@@ -18,9 +18,13 @@ jobs:
       - name: Set up linker
         run: docker build -t 860x9/rust_nuggets:latest .
       - name: Setup testing image
-        run: docker run -p 80:80 kennethreitz/httpbin
+        run: docker run -d -p 80:80 kennethreitz/httpbin
       - name: Run tests in docker container
         run: docker run --rm 860x9/rust_nuggets cargo test --release --verbose
+      - name: Clean up testing image
+        run: docker kill $(docker ps -q)
+      - name: Delete testing image
+        run: docker rm $(docker ps -a -q)
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
