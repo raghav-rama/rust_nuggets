@@ -13,6 +13,10 @@ mod read_json_test {
         a: &'a str,
         b: &'a str,
     }
+    #[derive(Serialize, Deserialize)]
+    struct C {
+        c: String,
+    }
     #[test]
     fn it_reads_the_json() {
         if let Some(dummy_json) = json!({
@@ -32,5 +36,14 @@ mod read_json_test {
                 }
             }
         }
+    }
+    #[test]
+    #[should_panic]
+    fn it_panics_when_reading_invalid_json() {
+        let dummy_json = json!({
+            "a": "some c",
+        });
+        let parsed = serde_json::from_value::<C>(dummy_json).unwrap();
+        assert_eq!(parsed.c, "some c");
     }
 }
