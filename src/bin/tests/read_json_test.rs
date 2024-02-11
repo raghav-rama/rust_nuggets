@@ -46,4 +46,16 @@ mod read_json_test {
         let parsed = serde_json::from_value::<C>(dummy_json).unwrap();
         assert_eq!(parsed.c, "some c");
     }
+    #[test]
+    #[should_panic]
+    fn it_panics_when_reading_invalid_json_with_match() {
+        let dummy_json = json!({
+            "a": "some c",
+        });
+        let parsed = serde_json::from_value::<C>(dummy_json);
+        match parsed {
+            Ok(_) => panic!("This should not be Ok!"),
+            Err(e) => assert_eq!(e.to_string(), "missing field `c` at line 1 column 1"),
+        }
+    }
 }

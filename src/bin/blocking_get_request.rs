@@ -10,7 +10,7 @@ error_chain! {
 }
 
 fn main() -> Result<()> {
-    let mut response = get("https://httpbin.org/get")?;
+    let mut response = get("http://localhost/get")?;
     let mut body = String::new();
     response.read_to_string(&mut body)?;
     println!("Status: {}", response.status());

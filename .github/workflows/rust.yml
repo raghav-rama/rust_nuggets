@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Set up linker
         run: docker build -t 860x9/rust_nuggets:latest .
+      - name: Setup testing image
+        run: docker run -p 80:80 kennethreitz/httpbin
       - name: Run tests in docker container
         run: docker run --rm 860x9/rust_nuggets cargo test --release --verbose
       - name: Login to Docker Hub
