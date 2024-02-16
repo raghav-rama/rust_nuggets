@@ -11,3 +11,4 @@ error-chain = "0.12.4"
 reqwest = { version = "0.11.24", features = ["json", "blocking"] }
 serde = { version = "1.0.196", features = ["derive"] }
 serde_json = { version = "1.0.113" }
+tokio = { version = "1.36.0", features = ["full"] }
