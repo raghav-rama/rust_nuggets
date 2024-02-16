@@ -18,4 +18,4 @@ incremental = true
 [profile.release]
 debug = 1
 incremental = true
-lto = "off"
+lto = "on"
