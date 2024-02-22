@@ -51,14 +51,12 @@ mod async_get_request_test {
             match env_result {
                 Ok(val) => {
                     if val == "true" {
-                        return true;
+                        true
                     } else {
-                        return false;
+                        false
                     }
                 }
-                Err(_) => {
-                    return false;
-                }
+                Err(_) => false,
             }
         }
         fn is_production(&self) -> bool {
@@ -66,14 +64,12 @@ mod async_get_request_test {
             match env_result {
                 Ok(val) => {
                     if val == "true" {
-                        return true;
+                        true
                     } else {
-                        return false;
+                        false
                     }
                 }
-                Err(_) => {
-                    return false;
-                }
+                Err(_) => false,
             }
         }
         fn is_github_action(&self) -> bool {
@@ -81,14 +77,12 @@ mod async_get_request_test {
             match env_result {
                 Ok(val) => {
                     if val == "true" {
-                        return true;
+                        true
                     } else {
-                        return false;
+                        false
                     }
                 }
-                Err(_) => {
-                    return false;
-                }
+                Err(_) => false,
             }
         }
     }
@@ -105,6 +99,12 @@ mod async_get_request_test {
                 panic!("Error: {}", err);
             }
         }
+    }
+
+    #[test]
+    fn env_type_should_not_be_unknown() {
+        let env_config = EnvironmentType::new();
+        assert_ne!(env_config.get_env(), Environment::Unknown);
     }
 
     #[tokio::test]
