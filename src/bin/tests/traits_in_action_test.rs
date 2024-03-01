@@ -25,6 +25,7 @@ pub mod book {
     }
 }
 
+#[allow(dead_code)]
 pub mod book_impl {
     use super::book::Book;
     impl Book {
