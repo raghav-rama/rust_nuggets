@@ -1,8 +1,5 @@
 use error_chain::error_chain;
-use select::{
-    document::{self, Document},
-    predicate::Name,
-};
+use select::{document::Document, predicate::Name};
 
 error_chain! {
     foreign_links {
