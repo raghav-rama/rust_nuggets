@@ -7,3 +7,4 @@ mod k256_message_sign_test;
 mod read_json_test;
 mod traits_in_action_test;
 mod write_json_tests;
+mod zk_fibo_verify_test;
