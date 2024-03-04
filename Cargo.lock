@@ -1019,6 +1019,7 @@ dependencies = [
  "error-chain",
  "futures-util",
  "k256",
+ "rand",
  "reqwest",
  "select",
  "serde",
