@@ -25,6 +25,9 @@ mod zk_fibo_verify_test {
             .save("proof-with-pis.json")
             .expect("saving proof failed");
 
-        println!("succesfully generated and verified proof for the program!")
+        println!("succesfully generated and verified proof for the program!");
+
+        // check if proof exists
+        assert_eq!(std::path::Path::new("proof-with-pis.json").exists(), true)
     }
 }
