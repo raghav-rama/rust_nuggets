@@ -1885,6 +1885,7 @@ dependencies = [
 name = "rust_nuggets"
 version = "0.1.0"
 dependencies = [
+ "ansi_term",
  "dotenvy",
  "error-chain",
  "futures-util",

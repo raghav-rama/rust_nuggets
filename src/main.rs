@@ -1,3 +1,6 @@
+use ansi_term::Colour::{Blue, Cyan, Green, Purple, Red, Yellow};
+use ansi_term::Style;
+
 fn main() {
     println!("Hello, this is collection of rust stuff!");
     println!("Feel free to look in the bin folder and explore all the cool stuff");
@@ -12,5 +15,19 @@ fn main() {
     println!(
         "{}hi{} there, {}this{} is a {}cool{} message",
         c.1, c.0, c.2, c.0, c.3, c.0
+    );
+    let mut style = Style::new();
+    style.bold();
+    style.underline();
+    style.background = Some(Blue);
+    println!(
+        "{}{}{}{}{}{}{}",
+        Blue.paint("Hi"),
+        Green.paint(" there"),
+        Red.paint(" this"),
+        Yellow.paint(" is"),
+        Cyan.paint(" a"),
+        Purple.paint(" cool message\n"),
+        style.paint("Rust is fookin' awesome!")
     );
 }
