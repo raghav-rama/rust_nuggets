@@ -27,13 +27,11 @@ cargo t
 ```
 
 Docker
-You can build a Docker image for the application with the docker build command:
+You can pull the Docker image for the application with the docker pull command:
 
 ```bash
-docker build -t myapp .
+docker pull 860x9/rust_nuggets:latest
 ```
-
-Replace `myapp` with the name you want to give to your Docker image.
 
 Contributing
 Contributions are welcome! Please feel free to submit a pull request.
