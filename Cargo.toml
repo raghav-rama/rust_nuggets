@@ -22,3 +22,7 @@ sp1-zkvm = { git = "https://github.com/succinctlabs/sp1.git" }
 sp1-core = { git = "https://github.com/succinctlabs/sp1.git" }
 num = "0.4"
 ansi_term = "0.12.1"
+hyper = { version = "1.2.0", features = ["full"] }
+hyperlocal = "0.8.0"
+http-body-util = "0.1"
+hyper-util = { version = "0.1", features = ["full"] }
