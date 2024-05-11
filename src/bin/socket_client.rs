@@ -12,6 +12,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             return Ok(());
         }
     };
+    let addr = stream.local_addr()?;
+    println!("Connected to {addr:?}.");
+    let peer_addr = stream.peer_addr()?;
+    println!("Peer address: {peer_addr:?}.");
 
     // Emulate this
     // curl --unix-socket /var/run/docker.sock -X GET http:/v1.45/containers/json
