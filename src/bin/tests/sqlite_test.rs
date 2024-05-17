@@ -2,9 +2,21 @@
 mod tests {
     
     use std::result::Result;
-    use sqlx::{sqlite::SqliteQueryResult,  SqlitePool, };
+    use sqlx::{sqlite::SqliteQueryResult,  SqlitePool, Sqlite,migrate::MigrateDatabase};
+    use async_std::task;
+
+    async fn create_db(db_url:&str) {
+        if !Sqlite::database_exists(&db_url).await.unwrap_or(false) {
+        Sqlite::create_database(&db_url).await.unwrap();
+        match create_schema(&db_url).await {
+            Ok(_) => println!("Database created Sucessfully"),
+            Err(e) => panic!("{}",e),
+        }
+    }
+    }
 
     async fn create_schema(db_url:&str) -> Result<SqliteQueryResult, sqlx::Error> {
+        task::block_on(create_db(db_url));
         let pool = SqlitePool::connect(&db_url).await?;
         let qry = 
         "PRAGMA foreign_keys = ON ;
@@ -33,9 +45,12 @@ mod tests {
         return result;
     }
 
+
+
     #[async_std::test]
     async fn test_create_schema() {
         let db_url = "sqlite://sqlite.db";
+        task::block_on(create_db(db_url));
         let result = create_schema(db_url).await;
         assert!(result.is_ok());
     }
@@ -43,6 +58,7 @@ mod tests {
     #[async_std::test]
     async fn test_insert_into_settings() {
         let db_url = "sqlite://sqlite.db";
+        task::block_on(create_db(db_url));
         let pool = SqlitePool::connect(db_url).await.unwrap();
         let result = create_schema(db_url).await;
         assert!(result.is_ok());
