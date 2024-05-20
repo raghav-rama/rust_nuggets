@@ -6,6 +6,7 @@ mod image_download_test;
 mod k256_message_sign_test;
 mod read_json_test;
 mod secp256r1_test;
+mod socket_test;
 mod sqlite_test;
 mod traits_in_action_test;
 mod write_json_tests;
