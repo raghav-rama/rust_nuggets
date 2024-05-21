@@ -4,6 +4,7 @@ mod blocking_get_request_test;
 mod environment_variable_test;
 mod image_download_test;
 mod k256_message_sign_test;
+mod mutex_cache;
 mod read_json_test;
 mod secp256r1_test;
 mod socket_test;
