@@ -21,7 +21,7 @@ pub fn string(string: &str) -> bool {
         }
     }
 
-    state.cursor > 0 && state.cursor == state.characters.len()
+    state.cursor == state.characters.len()
 }
 /**
  * To test whether a str encodes a member of the Star language, we call the string function.
