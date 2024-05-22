@@ -1,6 +1,7 @@
 mod api_call_test;
 mod async_get_request_test;
 mod blocking_get_request_test;
+mod custom_parser_test;
 mod environment_variable_test;
 mod image_download_test;
 mod k256_message_sign_test;
