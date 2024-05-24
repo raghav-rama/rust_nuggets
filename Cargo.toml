@@ -40,3 +40,7 @@ sqlx = { version = "0.5.9", features = [
 async-std = { version = "1.6", features = ["attributes"] }
 futures = "0.3.18"
 aes-gcm = "0.10.3"
+aes = "0.7.5"
+block-modes = "0.8.1"
+hex-literal = "0.3.1"
+hex = "0.4"
