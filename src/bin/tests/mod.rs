@@ -5,6 +5,7 @@ mod custom_parser_test;
 mod environment_variable_test;
 mod image_download_test;
 mod k256_message_sign_test;
+mod keccak256_test;
 mod mutex_cache;
 mod read_json_test;
 mod secp256r1_test;
