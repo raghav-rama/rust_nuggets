@@ -1,3 +1,4 @@
+mod aes_test;
 mod api_call_test;
 mod async_get_request_test;
 mod blocking_get_request_test;
