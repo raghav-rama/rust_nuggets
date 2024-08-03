@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 #[cfg(test)]
 mod traits_in_action_test {
     use super::{book::Book, impl_me::Loggable};
