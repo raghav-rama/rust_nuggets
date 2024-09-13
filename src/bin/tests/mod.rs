@@ -12,4 +12,5 @@ mod read_json_test;
 mod socket_test;
 mod sqlite_test;
 mod traits_in_action_test;
+mod webhook_test;
 mod write_json_tests;
